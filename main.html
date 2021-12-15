@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <style>
+            
+            #response {
+                width:60%;
+                font-size:600%;
+                text-align: center;
+                border-radius:2%;
+                color:rgba(0, 0, 0, 0.625);
+            }
+            #submit {
+                width:20%;
+                font-size:400%;
+            }
+            #submit:hover {
+                font-size: 500%;
+            }
+
+            #footer {
+                position: absolute; 
+                bottom:0; 
+                left:0;
+                background-color:hsla(0, 0%, 0%, 0.520); 
+                height:6vh; 
+                width:100%; 
+                margin:none;
+                display:flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+                font-size: 130%;
+            }
+
+            #footer>p {
+                margin-left:10%;
+                margin-right:10%;
+                white-space: nowrap;
+            } 
+
+        </style>
+        
+    </head>
+
+    <body style="background-color:#263049; color:lightgray;">
+        <div style="text-align:center;margin:15vh;">
+            <h1 id="word" style="font-size: 700%;">word</h1>
+            <div style="display: flex; height:20%; justify-content: center;">
+                <input id="response" placeholder="answer" onpaste="return false" ondrop="return false">
+                <button id="submit" onclick="check()" >check</button>
+            </div>
+        </div>
+        <div id="footer">
+            <p>correct: <strong id="correct">12</strong></p>
+            <p>incorrect: <b id="incorrect">5</b> </p>
+            <p>remaining: <b id="remaining">10</b> </p>
+            <p>group: <b id="group">3/10</b> </p>
+        </div>
+
+
+        <div id="myModal" class="modal" style="display: none;">
+            <!-- <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/> -->
+
+            <div class="modal-content">
+                <h1 style="font-size: 400%;">Not quite...</h1>
+                <p>Correct answer: <strong id="correctWord">manger</strong></p>
+                <p>(you wrote: <strong id="enteredWord">mange</strong>)</p>
+
+
+                <div style="margin:3%;"></div>
+                <p style="font-size:large;color:cyan;">Rewrite it three times!</p>
+                <div style="margin:4%;"></div>
+                
+                <div class="retryField">
+                    <input class="retry" placeholder="practice" onpaste="return false" ondrop="return false">
+                    <svg class="check" xmlns="http://www.w3.org/2000/svg" fill="currentcolor" viewBox="0 0 16 16"></svg>
+                </div>
+                <div class="retryField">
+                    <input class="retry" placeholder="makes" onpaste="return false" ondrop="return false">
+                    <svg class="check" xmlns="http://www.w3.org/2000/svg" fill="currentcolor" viewBox="0 0 16 16"></svg>
+                </div>
+                <div class="retryField">
+                    <input class="retry" placeholder="perfect!" onpaste="return false" ondrop="return false">
+                    <svg class="check" xmlns="http://www.w3.org/2000/svg" fill="currentcolor" viewBox="0 0 16 16"></svg>
+                </div>
+
+                <button id="markCorrect" onclick="pass()">mark my answer correct</button>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="./script.js"></script>
+
+</html>
